@@ -320,6 +320,11 @@ action:
             data:
               entity_id: !input climate
               fan_mode: !input fan_modes
+          - delay: 
+              seconds: 1
+          - service: climate.turn_on
+            target:
+              entity_id: !input climate
           - domain: mobile_app
             type: notify
             device_id: !input notify_device
